@@ -11,18 +11,21 @@ public class Bullet : MonoBehaviour {
     public string shooterTag;
 
 	void Start () {
-	
+        damage = 10;
+        speed = 0.4f;
+        life = 3f;
 	}
 	
 	void Update () {
-	
+        life -= Time.deltaTime;
+        transform.position += transform.forward * speed;
 	}
 
     void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag(shooterTag))
+        if (!other.CompareTag(shooterTag) && !other.CompareTag(transform.tag))
         {
-            // Damage hit object
+            // TODO: Damage other object
             Destroy(gameObject);
         }
     }
