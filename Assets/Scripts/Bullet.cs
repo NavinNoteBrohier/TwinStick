@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag(shooterTag))
         {
