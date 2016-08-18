@@ -34,23 +34,71 @@ public class Bullet : MonoBehaviour
         {
             damage = 5;
             speed = 0.5f;
-            life = 3f;
+            life = 5;
         }
         else if (type == bulletType.lazer)
         {
             damage = 1;
             speed = 0;
-            life = 3f;
+            life = 0;
         }
         else if (type == bulletType.rocket)
         {
             damage = 20;
             speed = 0.2f;
-            life = 3f;
+            life = 8;
         }
     }
-	
-	void Update()
+
+    public void initialize(int a_type, int a_damage)
+    {
+        type = (bulletType)a_type;
+
+        if (type == bulletType.normal)
+        {
+            damage = a_damage;
+            speed = 0.5f;
+            life = 5;
+        }
+        else if (type == bulletType.lazer)
+        {
+            damage = a_damage;
+            speed = 0;
+            life = 0;
+        }
+        else if (type == bulletType.rocket)
+        {
+            damage = a_damage;
+            speed = 0.2f;
+            life = 8;
+        }
+    }
+
+    public void initialize(int a_type, int a_damage, int a_speed)
+    {
+        type = (bulletType)a_type;
+
+        if (type == bulletType.normal)
+        {
+            damage = a_damage;
+            speed = a_speed;
+            life = 5;
+        }
+        else if (type == bulletType.lazer)
+        {
+            damage = a_damage;
+            speed = 0;
+            life = 0;
+        }
+        else if (type == bulletType.rocket)
+        {
+            damage = a_damage;
+            speed = a_speed;
+            life = 8;
+        }
+    }
+
+    void Update()
     {
         if (type == bulletType.normal)
         {
