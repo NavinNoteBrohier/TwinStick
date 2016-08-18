@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     [HideInInspector]
     public string shooterTag;
 
-    void Awake()
+    void Awake() // Default Values
     {
         type = bulletType.normal;
         damage = 5;
@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
         life = 3f;
     }
 
-    public void initialize(int a_type)
+    public void initialize(int a_type) // Called from other script
     {
         type = (bulletType)a_type;
 
@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour
             speed = 0;
             life = 0;
         }
-        else if (type == bulletType.rocket)
+        else // type = bulletType.rocket
         {
             damage = 20;
             speed = 0.2f;
@@ -50,7 +50,7 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void initialize(int a_type, int a_damage)
+    public void initialize(int a_type, int a_damage) // Called from other script
     {
         type = (bulletType)a_type;
 
@@ -66,7 +66,7 @@ public class Bullet : MonoBehaviour
             speed = 0;
             life = 0;
         }
-        else if (type == bulletType.rocket)
+        else // type = bulletType.rocket
         {
             damage = a_damage;
             speed = 0.2f;
@@ -74,7 +74,7 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void initialize(int a_type, int a_damage, int a_speed)
+    public void initialize(int a_type, int a_damage, int a_speed) // Called from other script
     {
         type = (bulletType)a_type;
 
@@ -90,7 +90,7 @@ public class Bullet : MonoBehaviour
             speed = 0;
             life = 0;
         }
-        else if (type == bulletType.rocket)
+        else // type = bulletType.rocket
         {
             damage = a_damage;
             speed = a_speed;
@@ -109,7 +109,7 @@ public class Bullet : MonoBehaviour
         {
 
         }
-        else if (type == bulletType.rocket)
+        else // type = bulletType.rocket
         {
             life -= Time.deltaTime;
         }
