@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
         hspeed = Input.GetAxis("Horizontal") ;
         vspeed = Input.GetAxis("Vertical")   ;
 
-        Vector3 move = new Vector3(hspeed, vspeed, 0.0f);
+        Vector3 move = new Vector3(hspeed, 0.0f, vspeed);
 
         rb.AddForce(move * accel,ForceMode.Acceleration);
     }
